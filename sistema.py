@@ -2,17 +2,16 @@ from interface import *
 from arquivo import *
 from time import sleep
 
-arq = 'teste.txt'
+arq = 'arquivo.txt'
 
-if arquivoExiste(arq):
-    print('Arquivo encontrado com sucesso!')
-else:
-    print('Arquivo não encontrado!')
+if not arquivoExiste(arq):
+    criarArquivo(arq)
 
 while True:
     resposta = menu(['Pessoas Cadastradas', 'Cadastrar Pessoa', 'Sair do Sistema'])
     if resposta == 1:
-        cabeçalho('Opção 1')
+        #Opção de listar o conteúdo do arquivo!
+        lerArquivo(arq)
     elif resposta == 2:
         cabeçalho('Opção 2')
     elif resposta == 3:
