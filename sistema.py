@@ -1,25 +1,26 @@
-from lib.arquivo import *
-from lib.interface import *
+"""Sistema principal do menu"""
 from time import sleep
+from lib.arquivo import ler_arquivo, arquivo_existe, cadastrar_pessoa, criar_arquivo
+from lib.interface import menu, cabecalho, leia_int
 
-arq = 'arquivo.txt'
+ARQUIVO = 'arquivo.txt'
 
-if not arquivoExiste(arq):
-    criarArquivo(arq)
+if not arquivo_existe(ARQUIVO):
+    criar_arquivo(ARQUIVO)
 
 while True:
-    resposta = menu(['Pessoas Cadastradas', 'Cadastrar Pessoa', 'Sair do Sistema'])
-    if resposta == 1:
+    RESPOSTA = menu(['Pessoas Cadastradas', 'Cadastrar Pessoa', 'Sair do Sistema'])
+    if RESPOSTA == 1:
         #Opção de listar o conteúdo do arquivo.
-        lerArquivo(arq)
-    elif resposta == 2:
+        ler_arquivo(ARQUIVO)
+    elif RESPOSTA == 2:
         #Opção de cadastrar uma nova pessoa.
-        cabeçalho('NOVO CADASTRO')
-        nome = str(input('Nome: '))
-        idade = leiaInt('Idade: ')
-        cadastrarPessoa(arq, nome, idade)
-    elif resposta == 3:
-        cabeçalho('Saindo do sistema.')
+        cabecalho('NOVO CADASTRO')
+        NOME = str(input('Nome: '))
+        IDADE = leia_int('Idade: ')
+        cadastrar_pessoa(ARQUIVO, NOME, IDADE)
+    elif RESPOSTA == 3:
+        cabecalho('Saindo do sistema.')
         break
     else:
         print('\033[31mERRO! Digite uma opção válida!\033[m')

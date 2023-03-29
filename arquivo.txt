@@ -1,0 +1,3 @@
+Igor;20
+Cassia;60
+Fellipe;30
