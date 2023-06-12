@@ -1,3 +1,10 @@
+## 🖥️ Projeto
+
 Projeto em que utilizo meus conhecimentos aprendidos em Python;
-Curso: Curso em Vídeo
-Projeto sofrerá atualizações futuramente
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido durante o Curso em Vídeo com as seguintes tecnologias:
+
+- PYTHON
+- Git e Github
